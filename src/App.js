@@ -1,14 +1,18 @@
 import logo from './logo.svg';
+import tomatoIcon from './tomato.png';
 import './App.css';
+import "@fontsource/monoton"
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
+        <div className='logo-header'>
+          <img src={tomatoIcon} className="tomato-logo flicker-slow" alt="logo" />
+          <p className='neon'>
+            RANCID TO<span className="flicker-fast">M</span>A<span className="flicker-fast">T</span>OES
+          </p>
+        </div>
         <a
           className="App-link"
           href="https://reactjs.org"
