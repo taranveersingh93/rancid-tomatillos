@@ -1,23 +1,18 @@
-import logo from './logo.svg';
+import movieData from './data';
+import Movies from './Movies'
 import './App.css';
+import { useState } from 'react';
 
 function App() {
+
+  // make a movie card, pass in props - return the card structure in JSX
+  // iterate through the moviesData array, returning the data as cards, assign props in JSX
+
+  const [moviesList, setMovies] = useState(movieData.movies);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Movies movies={moviesList}/>
     </div>
   );
 }
