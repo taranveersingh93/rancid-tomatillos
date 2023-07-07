@@ -6,9 +6,14 @@ const Navbar = () => {
     <div className='navbar'>
       <div className='logo-header'>
         <img src={tomatoIcon} className="tomato-logo flicker-normal" alt="logo" />
-        <p className='neon'>
-          RANCID TOMATI<span className="flicker-fast">L</span><span className="flicker-slow">L</span>OS
-        </p>
+        <div className='logo-text'>
+          <p className='neon'>
+            RANCID
+          </p>
+          <p className='neon'>
+            TOMATI<span className="flicker-fast">L</span><span className="flicker-slow">L</span>OS
+          </p>
+        </div>
       </div>
       <div className='user-info'>
         Welcome, user!
