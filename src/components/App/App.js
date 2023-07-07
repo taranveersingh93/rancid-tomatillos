@@ -9,13 +9,15 @@ const App = () => {
 
   // make a movie card, pass in props - return the card structure in JSX
   // iterate through the moviesData array, returning the data as cards, assign props in JSX
-
+  const [onHomeView, setOnHomeView] = useState(true);
   const [movies, setMovies] = useState(movieData.movies);
-
+  
   return (
     <div className="App">
       <Navbar />
-      <Movies movies={movies}/>
+      <main>
+        {onHomeView && <Movies movies={movies}/>}
+      </main>
     </div>
   );
 }
