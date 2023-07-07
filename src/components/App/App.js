@@ -1,6 +1,6 @@
-import movieData from './data';
-import Movies from './Movies'
-import Navbar from './Navbar';
+import movieData from '../../data';
+import Movies from '../Movies/Movies';
+import Navbar from '../Navbar/Navbar';
 import './App.css';
 import { useState } from 'react';
 

@@ -1,5 +1,5 @@
 import './Movies.css';
-import Card from './Card';
+import Card from '../Card/Card';
 
 const Movies = ({ movies }) => {
 
