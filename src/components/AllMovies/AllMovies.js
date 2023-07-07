@@ -1,7 +1,7 @@
-import './Movies.css';
+import './AllMovies.css';
 import Card from '../Card/Card';
 
-const Movies = ({ movies }) => {
+const AllMovies = ({ movies }) => {
 
   const movieCards = movies.map(movie => {
     return (
@@ -21,4 +21,4 @@ const Movies = ({ movies }) => {
   )
 }
 
-export default Movies;
+export default AllMovies;
