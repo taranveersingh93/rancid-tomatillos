@@ -3,8 +3,10 @@ import './Card.css';
 const Card = ({ movieTitle, moviePoster, movieYear, id }) => {
   return (
     <div className='movie-card'>
-      <img src={moviePoster} className='movie-poster' alt={movieTitle} />
-      <h3> {`${movieTitle} (${movieYear})`}</h3>
+      <div className='movie-card-image-container'>
+        <img src={moviePoster} className='movie-poster' alt={movieTitle} />
+      </div>
+      <h3 className='movie-title'> {`${movieTitle} (${movieYear})`}</h3>
     </div>
   )
 }
