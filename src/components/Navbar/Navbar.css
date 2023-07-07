@@ -3,6 +3,9 @@
   padding: 5vh;
   background-color: black;
   color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .user-info {
@@ -12,7 +15,7 @@
 
 .neon{
   font-family: 'Monoton';
-  font-size:20px;
+  font-size: 3vw;
   color: #aa3737;
   font-weight: 400;
   letter-spacing: 10px;
@@ -36,4 +39,11 @@
 	20%, 21.999%, 63%, 63.999%, 65%, 69.999% {
 		opacity: 0.4;
 	}
+}
+
+.logo-header {
+  display: flex;
+  align-items: center;
+  align-self: center;
+  justify-self: center;
 }
