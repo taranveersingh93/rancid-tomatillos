@@ -3,16 +3,24 @@ import Card from '../Card/Card';
 
 const AllMovies = ({ movies }) => {
 
+  const handleClick = (event) => {
+    const chosenMovieId = event.target.id
+    console.log(event.target.id)
+    console.log(chosenMovieId)
+    console.log('wowie')
+  };
+
   const movieCards = movies.map(movie => {
     return (
       <Card
         // pass props down to card
-        // need poster and movie title only
+        // need poster and movie title onyl
         movieTitle={movie.title}
         moviePoster={movie.poster_path}
         movieYear={movie.release_date.slice(0,4)}
         key={movie.id}
         id={movie.id}
+        handleClick={handleClick}
       />
     )
   })
