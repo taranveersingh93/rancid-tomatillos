@@ -9,3 +9,31 @@
   display: flex;
   justify-content: flex-end;
 }
+
+.neon{
+  font-family: 'Monoton';
+  font-size:20px;
+  color: #aa3737;
+  font-weight: 400;
+  letter-spacing: 10px;
+  text-shadow: 1px 0px 1px #9a1a1a, 2px 0px 1px #9a1a1a, 3px 0px 1px #9a1a1a, 2px 0px 1px #e84b4b, 2px 3px 30px #e84b4b, 2px 0px 15px, 2px 0px 30px, #e84b4b,40px 0vw 200px #e84b4b;
+}
+
+.flicker-slow{
+  animation: flicker 3s linear infinite;
+}
+
+.flicker-fast{
+  animation: flicker 1s linear infinite;
+}
+
+@keyframes flicker {
+	0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
+		text-shadow: none;
+    opacity: .99;
+		
+	}
+	20%, 21.999%, 63%, 63.999%, 65%, 69.999% {
+		opacity: 0.4;
+	}
+}

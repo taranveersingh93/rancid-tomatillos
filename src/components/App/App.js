@@ -3,6 +3,7 @@ import Movies from '../Movies/Movies';
 import Navbar from '../Navbar/Navbar';
 import './App.css';
 import { useState } from 'react';
+import "@fontsource/monoton";
 
 const App = () => {
 

@@ -1,4 +1,5 @@
 import './Navbar.css'
+import tomatoIcon from '../../images/tomato.png'
 
 const Navbar = () => {
   return (
@@ -6,9 +7,12 @@ const Navbar = () => {
       <div className='user-info'>
         Welcome, user!
       </div>
-      <h1 className='main-title'>
-        MainTitle
-      </h1>
+      <div className='logo-header'>
+        <img src={tomatoIcon} className="tomato-logo flicker-slow" alt="logo" />
+        <p className='neon'>
+          RANCID TO<span className="flicker-fast">M</span>A<span className="flicker-fast">T</span>OES
+        </p>
+      </div>
     </div>
   )
 }
