@@ -1,6 +1,6 @@
 import './Card.css';
 
-const Card = ({ movieTitle, moviePoster, movieYear }) => {
+const Card = ({ movieTitle, moviePoster, movieYear, id }) => {
   return (
     <div className='movie-card'>
       <img src={moviePoster} className='movie-poster' alt={movieTitle} />
