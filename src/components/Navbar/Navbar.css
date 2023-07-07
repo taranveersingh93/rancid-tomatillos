@@ -23,11 +23,15 @@
 }
 
 .flicker-slow{
-  animation: flicker 3s linear infinite;
+  animation: flicker 5s linear infinite;
 }
 
 .flicker-fast{
   animation: flicker 1s linear infinite;
+}
+
+.flicker-normal{
+  animation: flicker 3s linear infinite;
 }
 
 @keyframes flicker {

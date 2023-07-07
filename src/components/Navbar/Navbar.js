@@ -5,9 +5,9 @@ const Navbar = () => {
   return (
     <div className='navbar'>
       <div className='logo-header'>
-        <img src={tomatoIcon} className="tomato-logo flicker-slow" alt="logo" />
+        <img src={tomatoIcon} className="tomato-logo flicker-normal" alt="logo" />
         <p className='neon'>
-          RANCID TO<span className="flicker-fast">M</span>A<span className="flicker-slow">T</span>OES
+          RANCID TOMATI<span className="flicker-fast">L</span><span className="flicker-slow">L</span>OS
         </p>
       </div>
       <div className='user-info'>
