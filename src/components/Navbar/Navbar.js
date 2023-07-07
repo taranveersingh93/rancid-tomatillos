@@ -7,12 +7,12 @@ const Navbar = () => {
       <div className='logo-header'>
         <img src={tomatoIcon} className="tomato-logo flicker-normal" alt="logo" />
         <div className='logo-text'>
-          <p className='neon'>
+          <h1 className='neon'>
             RANCID
-          </p>
-          <p className='neon'>
+          </h1>
+          <h2 className='neon'>
             TOMATI<span className="flicker-fast">L</span><span className="flicker-slow">L</span>OS
-          </p>
+          </h2>
         </div>
       </div>
       <div className='user-info'>
