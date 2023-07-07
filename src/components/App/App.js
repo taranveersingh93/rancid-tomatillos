@@ -11,13 +11,17 @@ const App = () => {
   // iterate through the moviesData array, returning the data as cards, assign props in JSX
   const [onHomeView, setOnHomeView] = useState(true);
   const [onDetailsView, setOnDetailsView] = useState(false);
+  const [searchValue, setSearchValue] = useState('');
   const [movies, setMovies] = useState(movieData.movies);
-
+  const changeSearch = value => {
+    setSearchValue(value);
+  }
+  
   return (
     <div className="App">
       <Navbar />
       <main>
-        {onHomeView && <AllMovies movies={movies}/>}
+        {onHomeView && <AllMovies changeSearch={changeSearch} movies={movies}/>}
         {/* {onDetailsView && <MovieDetails />} */}
       </main>
     </div>
