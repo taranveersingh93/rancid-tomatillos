@@ -1,8 +1,11 @@
 import './Card.css';
+import AOS from 'aos';
+import 'aos/dist/aos.css'; 
 
-const Card = ({ movieTitle, moviePoster, id }) => {
-  // add event handler
-  // add query selector
+AOS.init();
+
+const Card = ({ movieTitle, moviePoster, movieYear, id }) => {
+
   const handleClick = () => {
     const thisOne = id
     console.log(thisOne, 'hi');
@@ -10,13 +13,13 @@ const Card = ({ movieTitle, moviePoster, id }) => {
   };
 
   return (
-    <div className='movie-card' onClick={handleClick}>
-      <img src={moviePoster} className='movie-poster' alt={movieTitle} id={id}/>
-      <h3>
-        {movieTitle}
-      </h3>
+    <div className='movie-card' data-aos="fade-up" onClick={handleClick}>
+      <div className='movie-card-image-container'>
+        <img src={moviePoster} className='movie-poster' alt={movieTitle} id={id}/>
+      </div>
+      <h3 className='movie-title'> {`${movieTitle} (${movieYear})`}</h3>
     </div>
   )
 }
 
-export default Card; ter
+export default Card;

@@ -1,5 +1,0 @@
-.all-movies-container {
-  padding: 5vh;
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-}

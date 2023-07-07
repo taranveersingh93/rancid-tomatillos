@@ -1,17 +1,18 @@
-import './Movies.css';
+import './AllMovies.css';
 import Card from '../Card/Card';
 
-const Movies = ({ movies }) => {
-  
+const AllMovies = ({ movies }) => {
+
   const movieCards = movies.map(movie => {
     return (
-      <Card 
+      <Card
         // pass props down to card
         // need poster and movie title only
         movieTitle={movie.title}
         moviePoster={movie.poster_path}
-        id={movie.id}
+        movieYear={movie.release_date.slice(0,4)}
         key={movie.id}
+        id={movie.id}
       />
     )
   })
@@ -23,4 +24,4 @@ const Movies = ({ movies }) => {
   )
 }
 
-export default Movies;
+export default AllMovies;
