@@ -1,6 +1,6 @@
 import './Navbar.css'
 
-function Navbar(){
+const Navbar = () => {
   return (
     <div className='navbar'>
       <div className='user-info'>

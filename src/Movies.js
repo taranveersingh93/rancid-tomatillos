@@ -1,7 +1,7 @@
 import './Movies.css';
 import Card from './Card';
 
-function Movies({ movies }){
+const Movies = ({ movies }) => {
 
   const movieCards = movies.map(movie => {
     return (
