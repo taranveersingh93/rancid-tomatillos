@@ -5,11 +5,12 @@ const AllMovies = ({ movies }) => {
 
   const movieCards = movies.map(movie => {
     return (
-      <Card 
+      <Card
         // pass props down to card
         // need poster and movie title only
         movieTitle={movie.title}
         moviePoster={movie.poster_path}
+        movieYear={movie.release_date.slice(0,4)}
       />
     )
   })

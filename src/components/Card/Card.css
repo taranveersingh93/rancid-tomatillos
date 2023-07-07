@@ -1,5 +1,13 @@
 .movie-card {
-  color: white
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.movie-card h3 h4 {
+  margin-top: 10px;
 }
 
 .movie-poster {
