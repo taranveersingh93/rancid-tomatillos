@@ -29,7 +29,7 @@
 }
 
 .movie-card-image-container:hover img {
-  transform: scale(1.04);
+  transform: scale(1.02);
   transition: 0.3s ease-in-out;
   cursor: pointer;
 }
