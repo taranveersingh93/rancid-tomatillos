@@ -12,6 +12,7 @@ const AllMovies = ({ movies }) => {
         moviePoster={movie.poster_path}
         movieYear={movie.release_date.slice(0,4)}
         key={movie.id}
+        id={movie.id}
       />
     )
   })
