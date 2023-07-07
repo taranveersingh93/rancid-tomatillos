@@ -2,7 +2,7 @@ import './Movies.css';
 import Card from '../Card/Card';
 
 const Movies = ({ movies }) => {
-
+  
   const movieCards = movies.map(movie => {
     return (
       <Card 
@@ -10,6 +10,8 @@ const Movies = ({ movies }) => {
         // need poster and movie title only
         movieTitle={movie.title}
         moviePoster={movie.poster_path}
+        id={movie.id}
+        key={movie.id}
       />
     )
   })
