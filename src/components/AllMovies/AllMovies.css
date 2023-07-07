@@ -1,5 +1,7 @@
 .all-movies-container {
   padding: 5vh;
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  /* grid-template-columns: repeat(5, 1fr); */
+  grid-gap: 2em;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
 }
