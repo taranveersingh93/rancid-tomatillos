@@ -9,8 +9,6 @@ import './MovieDetails.css';
 
 const MovieDetails = ({ chosenMovie }) => {
 
-console.log(chosenMovie, 'choooooooooosen moooooooobie')
-
 const humanizeDate = (date) => {
   const inputDate = date.toString();
   const year = inputDate.slice(0,4);
@@ -40,7 +38,6 @@ const humanizeDate = (date) => {
         width: '100vw',
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover',
-        // filter: 'opacity(0.5)'
       }}>
         <div className="details-content">
           <div className='movie-details-poster-container'>
