@@ -3,21 +3,29 @@ import AllMovies from '../AllMovies/AllMovies';
 import MovieDetails from '../MovieDetails/MovieDetails';
 import Navbar from '../Navbar/Navbar';
 import './App.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import "@fontsource/monoton";
 import ErrorGrid from '../AllMovies/AllMovies'
-const App = () => {
+import { getData } from '../.././apiCalls/apiCalls'
 
-  // make a movie card, pass in props - return the card structure in JSX
-  // iterate through the moviesData array, returning the data as cards, assign props in JSX
+const App = () => {
   const [onHomeView, setOnHomeView] = useState(true);
   const [onDetailsView, setOnDetailsView] = useState(false);
   const [searchValue, setSearchValue] = useState('');
   const [movies, setMovies] = useState(movieData.movies);
   const [chosenMovie, setChosenMovie] = useState('')
-
+  const [allMovies, setAllMovies] = useState([])
 
   let chosenMovieId
+
+  useEffect(() => {
+    getData('movies')
+      .then(data => {
+        setMovies(data.movies)
+        setAllMovies(data.movies)
+      })
+
+  })
 
   const goToHomeView = value => {
     setOnDetailsView(!value);
@@ -43,7 +51,7 @@ const App = () => {
 
   const changeSearch = value => {
     setSearchValue(value);
-    setMovies(filterMovies(value, movieData.movies));
+    setMovies(filterMovies(value, allMovies));
   }
   
   return (
