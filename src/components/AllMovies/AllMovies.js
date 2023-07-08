@@ -1,14 +1,7 @@
 import './AllMovies.css';
 import Card from '../Card/Card';
 
-const AllMovies = ({ movies }) => {
-
-  const handleClick = (event) => {
-    const chosenMovieId = event.target.id
-    console.log(event.target.id)
-    console.log(chosenMovieId)
-    console.log('wowie')
-  };
+const AllMovies = ({ movies, handleClick }) => {
 
   const movieCards = movies.map(movie => {
     return (
