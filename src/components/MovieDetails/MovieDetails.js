@@ -1,4 +1,5 @@
 import './MovieDetails.css';
+import backIcon from '../../images/back-icon.png'
 
 const MovieDetails = ({ chosenMovie }) => {
 
@@ -26,10 +27,14 @@ const MovieDetails = ({ chosenMovie }) => {
 
   return (
     <div className='single-movie-view' >
+      
       <div className='single-movie-background'>
         <img src={chosenMovie.backdrop_path}/>
       </div>
       <div className="details-content">
+        <div className='back-icon-container'>
+          <img src={backIcon}/>
+        </div>
         <div className='movie-details-poster-container'>
           <img src={chosenMovie.poster_path} className='details-movie-poster' alt={chosenMovie.title} id={chosenMovie.id}/>
         </div>
