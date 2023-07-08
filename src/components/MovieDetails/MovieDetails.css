@@ -1,27 +1,60 @@
-.movie-details-card {
-  color: white;
+.single-movie-view {
+  position: relative;
+  width: 100vw;
+  height: auto;
+}
+
+.single-movie-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: auto;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: black;
+}
+
+.single-movie-background img {
+  height: 100%;
+  width: 100%;
+  object-fit: fill;
+  opacity: 0.1;
 }
 
 .details-content {
-  background-color: black;
-  filter: opacity(0.8);
-  height: 100vh;
-  width: 100vw;
+  position: absolute;
+  width: 100%;
+  height: auto;
+  color: white;
   display: flex;
-  flex-direction: row;
   justify-content: space-evenly;
-  flex-wrap: wrap;
   align-items: center;
+  left: 50%;
+  top: 20px;
+  transform: translate(-50%);
 }
 
 .details {
-  width: 50vw;
+  width: 40%;
 }
 
-.details-movie-poster {
-  padding: 5vh;
-  height: 80vh;
-  box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.495);
-  color: white;
-  filter: opacity(1);
+.movie-details-poster-container {
+  height: 70vh;
+}
+
+.movie-details-poster-container img {
+  height: 100%;
+}
+
+.back-icon-container img {
+  height: 100%;
+  opacity: 0.3;
+  transition: 0.2s ease-in-out;
+}
+
+.back-icon-container:hover img {
+  opacity: 1;
+  transition: 0.2s ease-in-out;
+  cursor: pointer;
 }
