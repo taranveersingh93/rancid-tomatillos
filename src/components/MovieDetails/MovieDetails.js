@@ -27,7 +27,7 @@ const MovieDetails = ({ chosenMovie, goToHomeView }) => {
 
   return (
     <div className='single-movie-view'>
-      <div className='single-movie-background'>
+      <div className='single-movie-background'> 
         <img src={chosenMovie.backdrop_path}/>
       </div>
       <div className="details-content">
