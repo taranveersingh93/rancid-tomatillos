@@ -1,7 +1,11 @@
 .all-movies-container {
   padding: 5vh;
   display: grid;
-  /* grid-template-columns: repeat(5, 1fr); */
   grid-gap: 2em;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+
+.error-message {
+  color: rgba(255, 255, 255, 0.314);
+  font-size: 30px;
 }

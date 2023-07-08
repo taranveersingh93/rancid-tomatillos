@@ -4,7 +4,7 @@ import Navbar from '../Navbar/Navbar';
 import './App.css';
 import { useState } from 'react';
 import "@fontsource/monoton";
-
+import ErrorGrid from '../AllMovies/AllMovies'
 const App = () => {
 
   // make a movie card, pass in props - return the card structure in JSX

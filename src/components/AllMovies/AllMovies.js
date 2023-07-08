@@ -16,9 +16,14 @@ const AllMovies = ({ movies, changeSearch }) => {
     )
   })
 
+  const ErrorMessage = () => {
+    return (<h3 className='error-message'>Sorry, No movies to display</h3>);
+  }
+
   return (
     <section className='all-movies-view'>
       <FilterRibbon changeSearch={changeSearch}/>
+      {!movies.length && <ErrorMessage />}
       <div className='all-movies-container'>
         {movieCards}
       </div>
