@@ -19,7 +19,9 @@ const App = () => {
   }
 
   const changeSearch = value => {
+    console.log(searchValue, "before")
     setSearchValue(value);
+    console.log(searchValue, "after")
     setMovies(filterMovies(value, movieData.movies));
   }
   
@@ -27,7 +29,7 @@ const App = () => {
     <div className="App">
       <Navbar />
       <main>
-        {onHomeView && <AllMovies changeSearch={changeSearch} movies={movies}/>}
+        {onHomeView && <AllMovies changeSearch={changeSearch} movies={movies} searchValue={searchValue}/>}
         {/* {onDetailsView && <MovieDetails />} */}
       </main>
     </div>
