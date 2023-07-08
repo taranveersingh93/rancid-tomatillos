@@ -19,22 +19,21 @@ const App = () => {
 
   let chosenMovieId
 
-  const handleClick = (event) => {
+  const goToHomeView = value => {
+    setOnDetailsView(!value);
+    setOnHomeView(value);
+  }
 
+  const handleClick = (event) => {
     chosenMovieId = event.target.id
     setChosenMovie(findMovie(chosenMovieId))
-    
-    setOnDetailsView(true)
-    setOnHomeView(false)
+    goToHomeView(false);
   };
   
   const findMovie = (chosenMovieId) => {
-
     const filteredMovieData = movies.find((movie) => {
-
       return movie.id === parseInt(chosenMovieId)
     })
-
     return filteredMovieData
   }
 
@@ -43,21 +42,16 @@ const App = () => {
   }
 
   const changeSearch = value => {
-    console.log(searchValue, "before")
     setSearchValue(value);
-    console.log(searchValue, "after")
     setMovies(filterMovies(value, movieData.movies));
-
   }
   
   return (
     <div className="App">
       <Navbar />
       <main>
-        {/* {onHomeView && <AllMovies movies={movies}/>} */}
-        {onDetailsView && <MovieDetails chosenMovie={chosenMovie}/>}
-        {onHomeView && <AllMovies changeSearch={changeSearch} movies={movies} searchValue={searchValue} handleClick={handleClick}/>}
-        {/* {onDetailsView && <MovieDetails />} */}
+        {onDetailsView && <MovieDetails chosenMovie={chosenMovie} goToHomeView={goToHomeView}/>}
+        {onHomeView && <AllMovies changeSearch={changeSearch} movies={movies} searchValue={searchValue} handleClick={handleClick} />}
       </main>
     </div>
   );
