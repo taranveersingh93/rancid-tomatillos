@@ -1,0 +1,27 @@
+.movie-details-card {
+  color: white;
+}
+
+.details-content {
+  background-color: black;
+  filter: opacity(0.8);
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.details {
+  width: 50vw;
+}
+
+.details-movie-poster {
+  padding: 5vh;
+  height: 80vh;
+  box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.495);
+  color: white;
+  filter: opacity(1);
+}

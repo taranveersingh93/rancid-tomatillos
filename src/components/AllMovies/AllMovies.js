@@ -3,7 +3,7 @@ import Card from '../Card/Card';
 import FilterRibbon from './FilterRibbon/FilterRibbon';
 import { useState } from 'react';
 
-const AllMovies = ({ movies, changeSearch, searchValue }) => {
+const AllMovies = ({ movies, changeSearch, searchValue, handleClick }) => {
   const movieCards = movies.map(movie => {
     return (
       <Card
@@ -12,6 +12,7 @@ const AllMovies = ({ movies, changeSearch, searchValue }) => {
         movieYear={movie.release_date.slice(0,4)}
         key={movie.id}
         id={movie.id}
+        handleClick={handleClick}
       />
     )
   })
