@@ -1,5 +1,5 @@
 import { useState } from "react"
-
+import './FilterRibbon.css'
 
 
 const Searchbar = ({changeSearch}) => {  
@@ -7,6 +7,7 @@ const Searchbar = ({changeSearch}) => {
     <div className="search-container">
       <input 
         className="searchbar"
+        placeholder="Search for a movie"
         type="text"
         onChange={event => changeSearch(event.target.value)}
       ></input>
