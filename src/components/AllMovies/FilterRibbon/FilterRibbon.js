@@ -1,5 +1,6 @@
 import { useState } from "react"
 import './FilterRibbon.css'
+import crossIcon from '../../../images/cross.png'
 
 
 const Searchbar = ({changeSearch}) => {  
@@ -11,6 +12,9 @@ const Searchbar = ({changeSearch}) => {
         type="text"
         onChange={event => changeSearch(event.target.value)}
       ></input>
+      <div className="cross-container">
+        <img src={crossIcon} className="cross-icon"/>
+      </div>
     </div>
   )
 }
