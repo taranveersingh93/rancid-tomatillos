@@ -13,8 +13,14 @@ const App = () => {
   const [onDetailsView, setOnDetailsView] = useState(false);
   const [searchValue, setSearchValue] = useState('');
   const [movies, setMovies] = useState(movieData.movies);
+
+  const filterMovies = (keyword, movieList) => {
+    return [...movieList].filter(movie => movie.title.toLowerCase().includes(keyword.toLowerCase()))
+  }
+
   const changeSearch = value => {
     setSearchValue(value);
+    setMovies(filterMovies(value, movieData.movies));
   }
   
   return (
