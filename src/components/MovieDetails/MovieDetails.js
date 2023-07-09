@@ -2,21 +2,37 @@ import './MovieDetails.css';
 import backIcon from '../../images/back-icon.png';
 import { humanizeDate } from '../../helperFunctions';
 import { useEffect, useState } from 'react';
+import { checkServerError } from '../../helperFunctions';
 
 
 const MovieDetails = ({ chosenMovie, goToHomeView, getData }) => {
   const [dataArrived, setDataArrived] = useState(false);
   const [details, setDetails] = useState({});
+  const [serverError, setServerError] = useState(false);
+  
+  useEffect(() => {
+    // console.log(dataArrived)
+  }, [dataArrived])
 
   useEffect(() => {
     const chosenID = chosenMovie.id
     getData(`movies/${chosenID}`)
       .then(data => {
-        const fetchedMovie = data.movie
-        setDetails(fetchedMovie);
-        setDataArrived(true);
+        if (checkServerError(data)) {
+          setServerError(true)
+        } else {
+          const fetchedMovie = data.movie
+          setDetails(fetchedMovie);
+          setDataArrived(true);
+        }
       })
   }, [])
+
+  const SingleMovieError = () => {
+    return (
+      (<h3 className='error-message'>Sorry, movie details could not be loaded</h3>)
+    )
+  }
 
   const DetailedView = ({details}) => {
     return (
@@ -50,9 +66,9 @@ const MovieDetails = ({ chosenMovie, goToHomeView, getData }) => {
     )
   }
 
-  console.log(details)
   return (<>
     {dataArrived && <DetailedView details={details}/>}
+    {serverError && <SingleMovieError />}
   </>)
 }
 

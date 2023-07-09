@@ -3,7 +3,7 @@ import Card from '../Card/Card';
 import FilterRibbon from './FilterRibbon/FilterRibbon';
 import { useState } from 'react';
 
-const AllMovies = ({ movies, changeSearch, searchValue, handleClick }) => {
+const AllMovies = ({ serverError, movies, changeSearch, searchValue, handleClick }) => {
   const movieCards = movies.map(movie => {
     return (
       <Card
@@ -24,7 +24,7 @@ const AllMovies = ({ movies, changeSearch, searchValue, handleClick }) => {
   return (
     <section className='all-movies-view'>
       <FilterRibbon changeSearch={changeSearch} searchValue={searchValue}/>
-      {!movies.length && <ErrorMessage />}
+      {(!movies.length || serverError) && <ErrorMessage />}
       <div className='all-movies-container'>
         {movieCards}
       </div>

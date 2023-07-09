@@ -20,6 +20,14 @@ const humanizeDate = (date) => {
   return `${months[month]} ${newDate}, ${year}`;
 }
 
+const checkServerError = (response) => {
+  if (response === 'serverError') {
+    return true;
+  };
+  return false;
+}
+
 export {
-  humanizeDate
+  humanizeDate,
+  checkServerError
 }
