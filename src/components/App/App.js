@@ -13,7 +13,7 @@ const App = () => {
   const [onHomeView, setOnHomeView] = useState(true);
   const [onDetailsView, setOnDetailsView] = useState(false);
   const [searchValue, setSearchValue] = useState('');
-  const [movies, setMovies] = useState(movieData.movies);
+  const [movies, setMovies] = useState([]);
   const [chosenMovie, setChosenMovie] = useState('')
   const [allMovies, setAllMovies] = useState([])
   const [serverError, setServerError] = useState(false);
