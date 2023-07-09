@@ -22,35 +22,37 @@ const MovieDetails = ({ chosenMovie, goToHomeView, getData }) => {
     return (
       <div className='single-movie-view'>
         <div className='single-movie-background'> 
-          <img src={chosenMovie.backdrop_path}/>
+          <img src={details.backdrop_path}/>
         </div>
         <div className="details-content">
           <div className='back-icon-container' onClick={() => {goToHomeView(true)}}>
             <img src={backIcon}/>
           </div>
           <div className='movie-details-poster-container'>
-            <img src={chosenMovie.poster_path} className='details-movie-poster' alt={chosenMovie.title} id={chosenMovie.id}/>
+            <img src={details.poster_path} className='details-movie-poster' alt={details.title} id={details.id}/>
           </div>
           <div className='details'>
             <h2 className='movie-details-title'>
-              {`${chosenMovie.title}`}
+              {`${details.title}`}
             </h2>
             <div className='release-date'>
-              Released on {`${humanizeDate(chosenMovie.release_date)}`}
+              Released on {`${humanizeDate(details.release_date)}`}
             </div>
             <h3 className='rating'>
-              Average Rating: {chosenMovie.average_rating.toFixed(1)} / 10
+              Average Rating: {details.average_rating.toFixed(1)} / 10
             </h3>
             <p className='movie-description'> 
-            This is placeholder text:
-            Nearly 5,000 years after he was bestowed with the almighty powers of the Egyptian gods—and imprisoned just as quickly—Black Adam is freed from his earthly tomb, ready to unleash his unique form of justice on the modern world.</p>
+              {details.overview}
+            </p>
           </div>
         </div>
       </div>
     )
   }
+
+  console.log(details)
   return (<>
-    {dataArrived && <DetailedView />}
+    {dataArrived && <DetailedView details={details}/>}
   </>)
 }
 
