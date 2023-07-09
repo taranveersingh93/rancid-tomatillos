@@ -2,6 +2,7 @@ import './AllMovies.css';
 import Card from '../Card/Card';
 import FilterRibbon from './FilterRibbon/FilterRibbon';
 import { useState } from 'react';
+import PropTypes from 'prop-types';
 
 const AllMovies = ({ serverError, movies, changeSearch, searchValue, handleClick }) => {
   const movieCards = movies.map(movie => {
@@ -30,6 +31,14 @@ const AllMovies = ({ serverError, movies, changeSearch, searchValue, handleClick
       </div>
     </section>
   )
+}
+
+AllMovies.propTypes = {
+  serverError: PropTypes.bool,
+  movies: PropTypes.array,
+  changeSearch: PropTypes.func,
+  searchValue: PropTypes.string,
+  handleClick: PropTypes.func
 }
 
 export default AllMovies;
