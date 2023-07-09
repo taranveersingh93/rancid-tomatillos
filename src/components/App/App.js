@@ -24,8 +24,7 @@ const App = () => {
         setMovies(data.movies)
         setAllMovies(data.movies)
       })
-
-  })
+  }, [])
 
   const goToHomeView = value => {
     setOnDetailsView(!value);
