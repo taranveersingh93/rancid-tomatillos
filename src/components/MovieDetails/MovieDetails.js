@@ -3,6 +3,7 @@ import backIcon from '../../images/back-icon.png';
 import { humanizeDate } from '../../helperFunctions';
 import { useEffect, useState } from 'react';
 import { checkServerError } from '../../helperFunctions';
+import PropTypes from 'prop-types';
 
 
 const MovieDetails = ({ chosenMovie, goToHomeView, getData }) => {
@@ -70,6 +71,12 @@ const MovieDetails = ({ chosenMovie, goToHomeView, getData }) => {
     {dataArrived && <DetailedView details={details}/>}
     {serverError && <SingleMovieError />}
   </>)
+}
+
+MovieDetails.propTypes = {
+  chosenMovie: PropTypes.object,
+  goToHomeView: PropTypes.func,
+  getData: PropTypes.func
 }
 
 export default MovieDetails
