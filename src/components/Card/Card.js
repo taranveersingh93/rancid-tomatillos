@@ -6,7 +6,6 @@ import PropTypes from 'prop-types'
 AOS.init();
 
 const Card = ({ movieTitle, moviePoster, movieYear, id, handleClick }) => {
-  
   return (
     <div className='movie-card' data-aos="fade-up">
       <div className='movie-card-image-container'>
