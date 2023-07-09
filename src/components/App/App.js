@@ -57,7 +57,7 @@ const App = () => {
     <div className="App">
       <Navbar />
       <main>
-        {onDetailsView && <MovieDetails chosenMovie={chosenMovie} goToHomeView={goToHomeView}/>}
+        {onDetailsView && <MovieDetails chosenMovie={chosenMovie} goToHomeView={goToHomeView} getData={getData}/>}
         {onHomeView && <AllMovies changeSearch={changeSearch} movies={movies} searchValue={searchValue} handleClick={handleClick} />}
       </main>
     </div>
