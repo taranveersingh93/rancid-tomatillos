@@ -1,6 +1,7 @@
 import { useState } from "react"
 import './FilterRibbon.css'
 import crossIcon from '../../../images/cross.png'
+import PropTypes from 'prop-types';
 
 
 const Searchbar = ({changeSearch, searchValue}) => {  
@@ -29,6 +30,16 @@ const FilterRibbon = ({changeSearch, searchValue}) => {
       <Searchbar changeSearch={changeSearch} searchValue={searchValue}/>
     </div>
   )
+}
+
+Searchbar.propTypes = {
+  changeSearch: PropTypes.func,
+  searchValue: PropTypes.string
+}
+
+FilterRibbon.propTypes = {
+  changeSearch: PropTypes.func,
+  searchValue: PropTypes.string
 }
 
 export default FilterRibbon;
