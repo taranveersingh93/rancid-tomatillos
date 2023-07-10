@@ -21,7 +21,7 @@ const humanizeDate = (date) => {
 }
 
 const checkServerError = (response) => {
-  if (response === 'serverError') {
+  if (response === 'errorServer') {
     return true;
   };
   return false;
