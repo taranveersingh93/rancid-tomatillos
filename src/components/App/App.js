@@ -7,22 +7,28 @@ import { useState, useEffect } from 'react';
 import "@fontsource/monoton";
 import ErrorGrid from '../AllMovies/AllMovies'
 import { getData } from '../.././apiCalls/apiCalls'
+import { checkServerError } from '../../helperFunctions';
 
 const App = () => {
   const [onHomeView, setOnHomeView] = useState(true);
   const [onDetailsView, setOnDetailsView] = useState(false);
   const [searchValue, setSearchValue] = useState('');
-  const [movies, setMovies] = useState(movieData.movies);
+  const [movies, setMovies] = useState([]);
   const [chosenMovie, setChosenMovie] = useState('')
   const [allMovies, setAllMovies] = useState([])
+  const [serverError, setServerError] = useState(false);
 
   let chosenMovieId
 
   useEffect(() => {
     getData('movies')
       .then(data => {
-        setMovies(data.movies)
-        setAllMovies(data.movies)
+        if (checkServerError(data)) {
+          setServerError(true);
+        } else {
+          setMovies(data.movies)
+          setAllMovies(data.movies)
+        }
       })
   }, [])
 
@@ -57,8 +63,8 @@ const App = () => {
     <div className="App">
       <Navbar />
       <main>
-        {onDetailsView && <MovieDetails chosenMovie={chosenMovie} goToHomeView={goToHomeView}/>}
-        {onHomeView && <AllMovies changeSearch={changeSearch} movies={movies} searchValue={searchValue} handleClick={handleClick} />}
+        {onDetailsView && <MovieDetails chosenMovie={chosenMovie} goToHomeView={goToHomeView} getData={getData}/>}
+        {onHomeView && <AllMovies serverError={serverError} changeSearch={changeSearch} movies={movies} searchValue={searchValue} handleClick={handleClick} />}
       </main>
     </div>
   );
