@@ -39,17 +39,11 @@ const App = () => {
   }
 
   const handleClick = (event) => {
-    chosenMovieId = event.target.id
-    setChosenMovie(findMovie(chosenMovieId))
+    // chosenMovieId = event.target.id
+    // setChosenMovie(findMovie(chosenMovieId))
     goToHomeView(false);
   };
-  
-  const findMovie = (chosenMovieId) => {
-    const filteredMovieData = movies.find((movie) => {
-      return movie.id === parseInt(chosenMovieId)
-    })
-    return filteredMovieData
-  }
+
 
   const filterMovies = (keyword, movieList) => {
     return [...movieList].filter(movie => movie.title.toLowerCase().includes(keyword.toLowerCase()))
@@ -66,7 +60,7 @@ const App = () => {
      
       <main>
         <Routes>
-            <Route path='/:id' element={onDetailsView && <MovieDetails chosenMovie={chosenMovie} goToHomeView={goToHomeView} getData={getData}/>} />
+            <Route path='/:id' element={onDetailsView && <MovieDetails goToHomeView={goToHomeView} getData={getData}/>} />
             <Route path='/' element={onHomeView && <AllMovies serverError={serverError} changeSearch={changeSearch} movies={movies} searchValue={searchValue} handleClick={handleClick} />} />
         </Routes>
       </main>
