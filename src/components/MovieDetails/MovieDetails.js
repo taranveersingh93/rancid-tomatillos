@@ -1,22 +1,25 @@
 import './MovieDetails.css';
 import backIcon from '../../images/back-icon.png';
-import { humanizeDate } from '../../helperFunctions';
+import { humanizeDate, findMovie } from '../../helperFunctions';
 import { useEffect, useState } from 'react';
 import { checkServerError } from '../../helperFunctions';
 import PropTypes from 'prop-types';
+import { useParams, Link } from 'react-router-dom'
 
 
-const MovieDetails = ({ chosenMovie, goToHomeView, getData }) => {
+const MovieDetails = ({ goToHomeView, getData }) => {
   const [dataArrived, setDataArrived] = useState(false);
   const [details, setDetails] = useState({});
   const [serverError, setServerError] = useState(false);
-  
+
+  const chosenID = useParams().id
+
   useEffect(() => {
     // console.log(dataArrived)
   }, [dataArrived])
 
   useEffect(() => {
-    const chosenID = chosenMovie.id
+    
     getData(`movies/${chosenID}`)
       .then(data => {
         if (checkServerError(data)) {
@@ -48,9 +51,13 @@ const MovieDetails = ({ chosenMovie, goToHomeView, getData }) => {
           {/* <img src={details.backdrop_path}/> */}
         </div>
         <div className="details-content">
+        
           <div className='back-icon-container' onClick={() => {goToHomeView(true)}}>
-            <img src={backIcon}/>
+            <Link to='/' >
+              <img src={backIcon}/>
+            </Link>
           </div>
+          
           <div className='movie-details-poster-container'>
             <img src={details.poster_path} className='details-movie-poster' alt={details.title} id={details.id}/>
           </div>
