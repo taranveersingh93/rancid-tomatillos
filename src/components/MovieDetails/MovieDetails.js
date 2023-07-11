@@ -46,7 +46,7 @@ const MovieDetails = ({ goToHomeView, getData }) => {
         </div>
         <div className="details-content">
         
-          <div className='back-icon-container' onClick={() => {goToHomeView(true)}}>
+          <div className='back-icon-container'>
             <Link to='/' >
               <img src={backIcon}/>
             </Link>
