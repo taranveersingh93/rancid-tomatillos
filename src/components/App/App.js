@@ -62,10 +62,15 @@ const App = () => {
   return (
     <div className="App">
       <Navbar />
+      <Routes>
       <main>
         {onDetailsView && <MovieDetails chosenMovie={chosenMovie} goToHomeView={goToHomeView} getData={getData}/>}
         {onHomeView && <AllMovies serverError={serverError} changeSearch={changeSearch} movies={movies} searchValue={searchValue} handleClick={handleClick} />}
       </main>
+
+
+      </Routes>
+
     </div>
   );
 }
