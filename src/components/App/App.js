@@ -8,6 +8,7 @@ import "@fontsource/monoton";
 import ErrorGrid from '../AllMovies/AllMovies'
 import { getData } from '../.././apiCalls/apiCalls'
 import { checkServerError } from '../../helperFunctions';
+import { Route, Routes } from 'react-router-dom'
 
 const App = () => {
   const [onHomeView, setOnHomeView] = useState(true);
@@ -62,14 +63,16 @@ const App = () => {
   return (
     <div className="App">
       <Navbar />
-      <Routes>
+     
       <main>
-        {onDetailsView && <MovieDetails chosenMovie={chosenMovie} goToHomeView={goToHomeView} getData={getData}/>}
-        {onHomeView && <AllMovies serverError={serverError} changeSearch={changeSearch} movies={movies} searchValue={searchValue} handleClick={handleClick} />}
+        <Routes>
+            <Route path='/:id' element={onDetailsView && <MovieDetails chosenMovie={chosenMovie} goToHomeView={goToHomeView} getData={getData}/>} />
+            <Route path='/' element={onHomeView && <AllMovies serverError={serverError} changeSearch={changeSearch} movies={movies} searchValue={searchValue} handleClick={handleClick} />} />
+        </Routes>
       </main>
 
 
-      </Routes>
+      
 
     </div>
   );
