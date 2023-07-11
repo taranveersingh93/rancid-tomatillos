@@ -4,7 +4,7 @@ import { humanizeDate, findMovie } from '../../helperFunctions';
 import { useEffect, useState } from 'react';
 import { checkServerError } from '../../helperFunctions';
 import PropTypes from 'prop-types';
-import { useParams } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 
 
 const MovieDetails = ({ goToHomeView, getData }) => {
@@ -45,9 +45,13 @@ const MovieDetails = ({ goToHomeView, getData }) => {
           <img src={details.backdrop_path}/>
         </div>
         <div className="details-content">
+        
           <div className='back-icon-container' onClick={() => {goToHomeView(true)}}>
-            <img src={backIcon}/>
+            <Link to='/' >
+              <img src={backIcon}/>
+            </Link>
           </div>
+          
           <div className='movie-details-poster-container'>
             <img src={details.poster_path} className='details-movie-poster' alt={details.title} id={details.id}/>
           </div>
