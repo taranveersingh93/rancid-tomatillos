@@ -11,6 +11,7 @@ describe('rancid tomatillos homepage user flows', () => {
     // cy.wait(500)
     // cy.get('wait.input1').contains('movie-card-image-container')
     cy.contains('h1', 'RANCID')
-    cy.contains('h2', 'TOMATI')
+    cy.contains('h2', 'TOMATILLOS')
+
   })
 })
