@@ -14,6 +14,7 @@ describe('rancid tomatillos homepage user flows', () => {
     cy.contains('h2', 'TOMATILLOS')
     cy.contains('div', 'Welcome, user!')
     cy.get('input[name=searchbar]')
+    cy.get('img[name=cross-icon]')
     cy.get('.all-movies-container').children()
       .should('have.length', 40)
   })

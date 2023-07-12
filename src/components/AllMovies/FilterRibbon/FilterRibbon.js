@@ -18,6 +18,7 @@ const Searchbar = ({changeSearch, searchValue}) => {
       <div className="cross-container">
         <img
           src={crossIcon}
+          name='cross-icon'
           className="cross-icon"
           onClick={() => changeSearch('')}/>
       </div>
