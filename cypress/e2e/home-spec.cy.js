@@ -13,6 +13,6 @@ describe('rancid tomatillos homepage user flows', () => {
     cy.contains('h1', 'RANCID')
     cy.contains('h2', 'TOMATILLOS')
     cy.contains('div', 'Welcome, user!')
-
+    cy.get('input[name=searchbar]')
   })
 })

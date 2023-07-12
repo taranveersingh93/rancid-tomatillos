@@ -9,6 +9,7 @@ const Searchbar = ({changeSearch, searchValue}) => {
     <div className="search-container">
       <input 
         className="searchbar"
+        name='searchbar'
         placeholder="Search for a movie"
         type="text"
         onChange={event => changeSearch(event.target.value)}
