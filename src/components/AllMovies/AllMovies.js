@@ -4,7 +4,7 @@ import FilterRibbon from './FilterRibbon/FilterRibbon';
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 
-const AllMovies = ({ serverError, movies, changeSearch, searchValue, handleClick }) => {
+const AllMovies = ({ serverError, movies, changeSearch, searchValue }) => {
   const movieCards = movies.map(movie => {
     return (
       <Card
@@ -13,7 +13,6 @@ const AllMovies = ({ serverError, movies, changeSearch, searchValue, handleClick
         movieYear={movie.release_date.slice(0,4)}
         key={movie.id}
         id={movie.id}
-        handleClick={handleClick}
       />
     )
   })
@@ -38,7 +37,6 @@ AllMovies.propTypes = {
   movies: PropTypes.array,
   changeSearch: PropTypes.func,
   searchValue: PropTypes.string,
-  handleClick: PropTypes.func
 }
 
 export default AllMovies;

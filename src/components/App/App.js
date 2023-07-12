@@ -57,17 +57,13 @@ const App = () => {
   return (
     <div className="App">
       <Navbar />
-     
       <main>
         <Routes>
-            <Route path='/:id' element={onDetailsView && <MovieDetails goToHomeView={goToHomeView} getData={getData}/>} />
-            <Route path='/' element={onHomeView && <AllMovies serverError={serverError} changeSearch={changeSearch} movies={movies} searchValue={searchValue} handleClick={handleClick} />} />
+            <Route path='/' element={<AllMovies serverError={serverError} changeSearch={changeSearch} movies={movies} searchValue={searchValue} />}>
+            </Route>
+            <Route path='/:id' element={<MovieDetails getData={getData}/>} />
         </Routes>
       </main>
-
-
-      
-
     </div>
   );
 }
