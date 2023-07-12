@@ -1,13 +1,7 @@
-import { Link } from "react-router-dom";
-
 describe('rancid tomatillos homepage user flows', () => {
 
   beforeEach(() => {
-    cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies', {
-      statusCode: 200,
-      fixture: '.././fixtures/all-movies-test.json'
-    })
-      .visit('http://localhost:3000');
+    cy.visit('http://localhost:3000');
   });
   
   it('should display all navbar elements upon navigating to the app', () => {
@@ -25,10 +19,21 @@ describe('rancid tomatillos homepage user flows', () => {
   });
   
   it('should display all movie posters', () => {
+    cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies', {
+      statusCode: 200,
+      fixture: '.././fixtures/all-movies-test.json'
+    })
     cy.get('.all-movies-container').children()
       .should('have.length', 4)
     cy.get('img[name=movie-poster]')
       .get('#436270')
     cy.contains('h3', 'Black Adam (2022)')
   });
+
+  it('should display error message through unsuccessful response'), () => {
+    cy.intercept('GET', 'ttps://rancid-tomatillos.herokuapp.com/api/v2/movies', {
+      statusCode: 500,
+      fixture: ''
+    })
+  }
 });

@@ -1,7 +1,6 @@
 import './AllMovies.css';
 import Card from '../Card/Card';
 import FilterRibbon from './FilterRibbon/FilterRibbon';
-import { useState } from 'react';
 import PropTypes from 'prop-types';
 
 const AllMovies = ({ serverError, movies, changeSearch, searchValue, handleClick }) => {
