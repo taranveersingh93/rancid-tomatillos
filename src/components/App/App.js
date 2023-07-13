@@ -47,7 +47,7 @@ const App = () => {
      
       <main>
         <Routes>
-            <Route path='/:id' element={<MovieDetails goToHomeView={goToHomeView} getData={getData}/>} />
+            <Route path='/:id' element={<MovieDetails getData={getData}/>} />
             <Route path='/' element={onHomeView && <AllMovies serverError={serverError} changeSearch={changeSearch} movies={movies} searchValue={searchValue}/>} />
         </Routes>
       </main>
