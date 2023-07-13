@@ -1,7 +1,6 @@
 .single-movie-view {
   position: relative;
   width: 100vw;
-  height: auto;
 }
 
 .single-movie-background {
@@ -9,11 +8,13 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: auto;
-  background-repeat: no-repeat;
+  /* width: 100vw; */
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   background-size: cover;
-  background-color: black;
+  background-repeat: no-repeat;
+  /* background-color: black; */
 }
 
 .single-movie-background img {

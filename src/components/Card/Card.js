@@ -11,7 +11,7 @@ const Card = ({ movieTitle, moviePoster, movieYear, id, handleClick }) => {
     <div className='movie-card' data-aos="fade-up">
       <div className='movie-card-image-container'>
         <Link to={`/${id}`} >
-          <img src={moviePoster} className='movie-poster' name='movie-poster' alt={movieTitle} id={id} onClick={event => handleClick(event)}/>
+          <img src={moviePoster} className='movie-poster' name='movie-poster' alt={movieTitle} id={id}/>
         </Link>
       </div>
       <h3 className='movie-title'> {`${movieTitle} (${movieYear})`}</h3>

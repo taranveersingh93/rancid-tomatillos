@@ -3,7 +3,7 @@ import Card from '../Card/Card';
 import FilterRibbon from './FilterRibbon/FilterRibbon';
 import PropTypes from 'prop-types';
 
-const AllMovies = ({ serverError, movies, changeSearch, searchValue, handleClick }) => {
+const AllMovies = ({  serverError, movies, changeSearch, searchValue  }) => {
   let movieCards;
 
   if(movies) {
@@ -25,7 +25,7 @@ const AllMovies = ({ serverError, movies, changeSearch, searchValue, handleClick
   const ErrorMessage = () => {
     return (<h3 className='error-message' id='error-message'>Sorry, No movies to display</h3>);
   }
-  console.log(serverError)
+
   return (
     <section className='all-movies-view'>
       <FilterRibbon changeSearch={changeSearch} searchValue={searchValue}/>
@@ -42,7 +42,6 @@ AllMovies.propTypes = {
   movies: PropTypes.array,
   changeSearch: PropTypes.func,
   searchValue: PropTypes.string,
-  handleClick: PropTypes.func
 }
 
 export default AllMovies;
