@@ -11,6 +11,8 @@ describe('rancid tomatillos searchbar user flows', () => {
   it('should be able to search for movies using keywords in searchbar on homepage', () => {
     cy.get('input[name=searchbar]')
       .type('adam')
+      .get('.all-movies-container')
+      .contains('h3', 'Black Adam (2022)')
 
   })
 });
