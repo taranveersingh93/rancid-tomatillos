@@ -15,12 +15,10 @@ const AllMovies = ({  serverError, movies, changeSearch, searchValue  }) => {
           movieYear={movie.release_date.slice(0,4)}
           key={movie.id}
           id={movie.id}
-          // handleClick={handleClick}
         />
       )
     })
   }
-
 
   const ErrorMessage = () => {
     return (<h3 className='error-message' id='error-message'>Sorry, No movies to display</h3>);
