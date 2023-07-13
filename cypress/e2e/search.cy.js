@@ -23,5 +23,9 @@ describe('rancid tomatillos searchbar user flows', () => {
     cy.get('img[name=cross-icon]').click()
   });
 
-  
+  it('should modify search when deleting letters/word from search', () => {
+    cy.get('input[name=searchbar]')
+      .type('damn')
+      .type('{backspace}')
+  });
 });
