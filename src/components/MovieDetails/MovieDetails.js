@@ -39,20 +39,14 @@ const MovieDetails = ({ goToHomeView, getData }) => {
   }
 
   const DetailedView = ({details}) => {
-    const backgroundStyle = {
-      background: `url(${details.backdrop_path}) no-repeat top center`,
-      height: '100vh',
-      width: '100vw',
-      opacity: 0.2,
-    }
     return (
       <div className='single-movie-view'>
-        <div className='single-movie-background' style={backgroundStyle}> 
-          {/* <img src={details.backdrop_path}/> */}
+        <div className='single-movie-background'> 
+          <img src={details.backdrop_path}/>
         </div>
         <div className="details-content">
         
-          <div className='back-icon-container'>
+          <div className='back-icon-container' onClick={() => {goToHomeView(true)}}>
             <Link to='/' >
               <img src={backIcon}/>
             </Link>
