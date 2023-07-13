@@ -21,5 +21,7 @@ describe('rancid tomatillos searchbar user flows', () => {
     cy.get('input[name=searchbar]')
       .type('king')
     cy.get('img[name=cross-icon]').click()
-  })
+  });
+
+  
 });
