@@ -15,5 +15,11 @@ describe('rancid tomatillos searchbar user flows', () => {
       .contains('h3', 'Black Adam (2022)')
       .get('img[name=movie-poster]')
       .get('#436270')
+  });
+
+  it('should clear the searchbar when the x is clicked', () => {
+    cy.get('input[name=searchbar]')
+      .type('king')
+    cy.get('img[name=cross-icon]').click()
   })
 });
