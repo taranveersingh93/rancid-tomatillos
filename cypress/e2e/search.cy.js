@@ -21,13 +21,15 @@ describe('rancid tomatillos searchbar user flows', () => {
     cy.get('input[name=searchbar]')
       .type('king')
     cy.get('img[name=cross-icon]').click()
+    cy.get('input[name=searchbar]')
+      .should('have.value', '');
   });
 
   it('should modify search when deleting letters/word from search', () => {
     cy.get('input[name=searchbar]')
       .type('damn')
       .get('.all-movies-container').children()
-        .should('have.length', 1)
+      .should('have.length', 1)
       .contains('h3', 'R.I.P.D. 2: Rise of the Damned (2022)')
       .get('input[name=searchbar]')
       .type('{backspace}')
