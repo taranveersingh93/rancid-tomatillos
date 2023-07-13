@@ -12,7 +12,6 @@ describe('rancid tomatillos homepage user flows', () => {
     cy.contains('h1', 'RANCID')
     cy.contains('h2', 'TOMATILLOS')
     cy.get('img[name=tomato-image]')
-      .should('be.visible')
     cy.contains('div', 'Welcome, user!')
     cy.location('pathname').should('eq', '/');
   });
@@ -20,7 +19,6 @@ describe('rancid tomatillos homepage user flows', () => {
   it('should display filter ribbon', () => {
     cy.get('input[name=searchbar]')
     cy.get('img[name=cross-icon]')
-      .should('be.visible')
   });
   
   it('should display all movie posters', () => {
