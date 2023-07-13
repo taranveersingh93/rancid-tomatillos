@@ -50,6 +50,13 @@ describe('should display the right elements in single movie view for Black Adam'
       .go(1).url().should('eq', 'http://localhost:3000/')
   })
 
+  it('should be able to go to homepage by clicking on logo', () => {
+    cy.url().should('eq', 'http://localhost:3000/436270')
+      .get('.logo-header').click()
+      .url().should('eq', 'http://localhost:3000/')
+  
+  })
+
   it('should handle 500 error', () => {
     interceptMovie(500, 436270)
     cy.get('h3')
@@ -94,6 +101,13 @@ describe('should display the right elements in single movie view for The Woman K
       .url().should('eq', 'http://localhost:3000/')
       .go(-1).url().should('eq', 'http://localhost:3000/724495')
       .go(1).url().should('eq', 'http://localhost:3000/')
+  })
+
+  it('should be able to go to homepage by clicking on logo', () => {
+    cy.url().should('eq', 'http://localhost:3000/724495')
+      .get('.logo-header').click()
+      .url().should('eq', 'http://localhost:3000/')
+  
   })
 
   it('should handle 500 error', () => {
