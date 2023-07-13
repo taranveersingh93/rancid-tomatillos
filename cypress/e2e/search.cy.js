@@ -23,6 +23,8 @@ describe('rancid tomatillos searchbar user flows', () => {
     cy.get('img[name=cross-icon]').click()
     cy.get('input[name=searchbar]')
       .should('have.value', '');
+    cy.get('.all-movies-container').children()
+      .should('have.length', 5)
   });
 
   it('should modify search when deleting letters/word from search', () => {
