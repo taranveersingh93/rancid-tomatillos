@@ -34,7 +34,7 @@ const MovieDetails = ({ goToHomeView, getData }) => {
 
   const SingleMovieError = () => {
     return (
-      (<h3 className='error-message'>Sorry, movie details could not be loaded</h3>)
+      (<h3 className='error-message' id='error-message'>Sorry, movie details could not be loaded</h3>)
     )
   }
 
@@ -73,7 +73,7 @@ const MovieDetails = ({ goToHomeView, getData }) => {
       </div>
     )
   }
-
+console.log(serverError)
   return (<>
     {dataArrived && <DetailedView details={details}/>}
     {serverError && <SingleMovieError />}

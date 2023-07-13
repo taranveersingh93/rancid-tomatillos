@@ -26,6 +26,7 @@ const App = () => {
       .then(data => {
 
         if (checkServerError(data)) {
+          console.log('we are setting serverError state to tue here')
           setServerError(true);
         } else {
 
