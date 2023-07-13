@@ -13,6 +13,7 @@ describe('rancid tomatillos searchbar user flows', () => {
       .type('adam')
       .get('.all-movies-container')
       .contains('h3', 'Black Adam (2022)')
-
+      .get('img[name=movie-poster]')
+      .get('#436270')
   })
 });
