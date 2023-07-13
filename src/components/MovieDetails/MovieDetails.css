@@ -40,8 +40,20 @@
   width: 40%;
 }
 
+@media (max-width: 1200px) {
+  .details-content {
+    flex-direction: column;
+  }
+
+  .details {
+    width: 75%;
+  }
+}
+
+
 .movie-details-poster-container {
   height: 40vw;
+  min-height: 300px;
   display: flex;
   flex-direction: column;
   justify-content: center;
