@@ -14,6 +14,7 @@ describe('rancid tomatillos homepage user flows', () => {
     cy.get('img[name=tomato-image]')
       .should('be.visible')
     cy.contains('div', 'Welcome, user!')
+    cy.location('pathname').should('eq', '/');
   });
   
   it('should display filter ribbon', () => {
@@ -28,8 +29,13 @@ describe('rancid tomatillos homepage user flows', () => {
     cy.get('img[name=movie-poster]')
       .get('#436270')
     cy.contains('h3', 'Black Adam (2022)')
-    cy.location('pathname').should('eq', '/');
   });
+  
+    it('should direct a click to the clicked movie\'s details', () => {
+      cy.get('img[name=movie-poster]')
+        .get('#436270').click()
+        cy.url().should('include', '/436270')
+    })
 
   it('should display an error message when there is an unsuccessful response', () => {
     cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies', {
