@@ -21,22 +21,13 @@ const humanizeDate = (date) => {
 }
 
 const checkServerError = (response) => {
-  if (response === 'errorServer') {
+  if (response === 'serverError') {
     return true;
   };
   return false;
 }
 
-  
-// const findMovie = (chosenMovieId) => {
-//   const filteredMovieData = movies.find((movie) => {
-//     return movie.id === parseInt(chosenMovieId)
-//   })
-//   return filteredMovieData
-// }
-
 export {
   humanizeDate,
-  checkServerError,
-  // findMovie
+  checkServerError
 }

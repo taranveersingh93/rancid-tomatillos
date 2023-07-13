@@ -5,7 +5,7 @@ const Navbar = () => {
   return (
     <div className='navbar'>
       <div className='logo-header'>
-        <img src={tomatoIcon} className="tomato-logo flicker-normal" alt="logo" />
+        <img src={tomatoIcon} className="tomato-logo flicker-normal" name="tomato-image" alt="logo" />
         <div className='logo-text'>
           <h1 className='neon'>
             RANCID
