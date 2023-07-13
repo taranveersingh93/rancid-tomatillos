@@ -42,5 +42,4 @@ describe('rancid tomatillos searchbar user flows', () => {
     cy.get('.all-movies-view')
       .contains('h3', 'Sorry, No movies to display')
   });
-
 });

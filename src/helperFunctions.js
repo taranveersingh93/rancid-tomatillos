@@ -29,5 +29,5 @@ const checkServerError = (response) => {
 
 export {
   humanizeDate,
-  checkServerError
+  checkServerError,
 }

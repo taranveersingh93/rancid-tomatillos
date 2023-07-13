@@ -15,9 +15,6 @@ const MovieDetails = ({ goToHomeView, getData }) => {
   const chosenID = useParams().id
 
   useEffect(() => {
-  }, [dataArrived])
-
-  useEffect(() => {
     
     getData(`movies/${chosenID}`)
       .then(data => {
@@ -38,14 +35,20 @@ const MovieDetails = ({ goToHomeView, getData }) => {
   }
 
   const DetailedView = ({details}) => {
+    const backgroundStyle = {
+      background: `url(${details.backdrop_path}) no-repeat top center`,
+      height: '100vh',
+      width: '100vw',
+      opacity: 0.2,
+    }
+    
     return (
       <div className='single-movie-view'>
-        <div className='single-movie-background'> 
-          <img src={details.backdrop_path}/>
+        <div className='single-movie-background' style={backgroundStyle}> 
         </div>
         <div className="details-content">
         
-          <div className='back-icon-container' onClick={() => {goToHomeView(true)}}>
+          <div className='back-icon-container'>
             <Link to='/' >
               <img src={backIcon}/>
             </Link>
