@@ -24,12 +24,9 @@ const App = () => {
   useEffect(() => {
     getData('movies')
       .then(data => {
-
         if (checkServerError(data)) {
-          console.log('we are setting serverError state to tue here')
           setServerError(true);
         } else {
-
           setMovies(data.movies)
           setAllMovies(data.movies)
         }
@@ -42,8 +39,6 @@ const App = () => {
   }
 
   const handleClick = (event) => {
-    // chosenMovieId = event.target.id
-    // setChosenMovie(findMovie(chosenMovieId))
     goToHomeView(false);
   };
 

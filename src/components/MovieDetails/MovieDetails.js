@@ -15,7 +15,6 @@ const MovieDetails = ({ goToHomeView, getData }) => {
   const chosenID = useParams().id
 
   useEffect(() => {
-    // console.log(dataArrived)
   }, [dataArrived])
 
   useEffect(() => {
@@ -73,7 +72,7 @@ const MovieDetails = ({ goToHomeView, getData }) => {
       </div>
     )
   }
-console.log(serverError)
+
   return (<>
     {dataArrived && <DetailedView details={details}/>}
     {serverError && <SingleMovieError />}

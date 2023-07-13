@@ -29,6 +29,5 @@ const checkServerError = (response) => {
 
 export {
   humanizeDate,
-  checkServerError,
-  // findMovie
+  checkServerError
 }

@@ -41,8 +41,6 @@ describe('rancid tomatillos homepage user flows', () => {
     cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies', {
       statusCode: 500,
     })
-    // cy.get('.all-movies-view').
-      // .should('have.length', 0)
     cy.contains('h3', 'Sorry, No movies to display')
   });
 });
