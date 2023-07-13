@@ -34,7 +34,7 @@ describe('rancid tomatillos homepage user flows', () => {
   it('should direct a click to the clicked movie\'s details', () => {
     cy.get('img[name=movie-poster]')
       .get('#436270').click()
-      .url().should('include', '/436270')
+      .url().should('eq', 'http://localhost:3000/436270')
   })
 
   it('should display an error message when there is an unsuccessful response', () => {
