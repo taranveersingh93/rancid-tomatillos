@@ -35,6 +35,11 @@ describe('rancid tomatillos searchbar user flows', () => {
       .should('have.length', 3)
       .contains('h3', 'Amsterdam (2022)')
   });
+  
+  it('should display an error message when no results are avaiable from search', () => {
+    cy.get('input[name=searchbar]')
+      .type('kdnfkdfn')
 
+  });
 
 });
