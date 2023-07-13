@@ -1,11 +1,9 @@
-import movieData from '../../data';
 import AllMovies from '../AllMovies/AllMovies';
 import MovieDetails from '../MovieDetails/MovieDetails';
 import Navbar from '../Navbar/Navbar';
 import './App.css';
 import { useState, useEffect } from 'react';
 import "@fontsource/monoton";
-import ErrorGrid from '../AllMovies/AllMovies'
 import { getData } from '../.././apiCalls/apiCalls'
 import { checkServerError } from '../../helperFunctions';
 import { Route, Routes } from 'react-router-dom'
@@ -32,18 +30,6 @@ const App = () => {
         }
       })
   }, [])
-
-  const goToHomeView = value => {
-    setOnDetailsView(!value);
-    setOnHomeView(value);
-  }
-
-  const handleClick = (event) => {
-    // chosenMovieId = event.target.id
-    // setChosenMovie(findMovie(chosenMovieId))
-    goToHomeView(false);
-  };
-
 
   const filterMovies = (keyword, movieList) => {
     return [...movieList].filter(movie => movie.title.toLowerCase().includes(keyword.toLowerCase()))

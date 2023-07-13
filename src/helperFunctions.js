@@ -27,16 +27,7 @@ const checkServerError = (response) => {
   return false;
 }
 
-  
-// const findMovie = (chosenMovieId) => {
-//   const filteredMovieData = movies.find((movie) => {
-//     return movie.id === parseInt(chosenMovieId)
-//   })
-//   return filteredMovieData
-// }
-
 export {
   humanizeDate,
   checkServerError,
-  // findMovie
 }

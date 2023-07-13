@@ -15,10 +15,6 @@ const MovieDetails = ({ goToHomeView, getData }) => {
   const chosenID = useParams().id
 
   useEffect(() => {
-    // console.log(dataArrived)
-  }, [dataArrived])
-
-  useEffect(() => {
     
     getData(`movies/${chosenID}`)
       .then(data => {
@@ -48,7 +44,6 @@ const MovieDetails = ({ goToHomeView, getData }) => {
     return (
       <div className='single-movie-view'>
         <div className='single-movie-background' style={backgroundStyle}> 
-          {/* <img src={details.backdrop_path}/> */}
         </div>
         <div className="details-content">
         
