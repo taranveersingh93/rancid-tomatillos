@@ -24,6 +24,7 @@ const App = () => {
   useEffect(() => {
     getData('movies')
       .then(data => {
+        console.log(data)
         if (checkServerError(data)) {
           setServerError(true);
         } else {

@@ -8,14 +8,14 @@ describe('rancid tomatillos homepage user flows', () => {
     cy.contains('h1', 'RANCID')
     cy.contains('h2', 'TOMATILLOS')
     cy.get('img[name=tomato-image]')
-    .should('be.visible')
+      .should('be.visible')
     cy.contains('div', 'Welcome, user!')
   });
   
   it('should display filter ribbon', () => {
     cy.get('input[name=searchbar]')
     cy.get('img[name=cross-icon]')
-    .should('be.visible')
+      .should('be.visible')
   });
   
   it('should display all movie posters', () => {
@@ -30,10 +30,16 @@ describe('rancid tomatillos homepage user flows', () => {
     cy.contains('h3', 'Black Adam (2022)')
   });
 
-  it('should display error message through unsuccessful response'), () => {
-    cy.intercept('GET', 'ttps://rancid-tomatillos.herokuapp.com/api/v2/movies', {
+  it('should display an error message when there is an unsuccessful response', () => {
+    cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies', {
       statusCode: 500,
-      fixture: ''
+      // fixture: '.././fixtures/500-level-test.json'
     })
-  }
+
+    cy.get('.all-movies-container').children()
+      .should('have.length', 0)
+
+    cy.get('.error-message')
+      .contains('h3', 'Sorry, No movies to display')
+  });
 });
