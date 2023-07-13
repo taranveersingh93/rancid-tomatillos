@@ -23,7 +23,7 @@ describe('rancid tomatillos homepage user flows', () => {
   
   it('should display all movie posters', () => {
     cy.get('.all-movies-container').children()
-      .should('have.length', 4)
+      .should('have.length', 5)
     cy.get('img[name=movie-poster]')
       .get('#436270')
     cy.contains('h3', 'Black Adam (2022)')
