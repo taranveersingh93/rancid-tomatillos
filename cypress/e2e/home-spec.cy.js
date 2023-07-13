@@ -31,11 +31,11 @@ describe('rancid tomatillos homepage user flows', () => {
     cy.contains('h3', 'Black Adam (2022)')
   });
   
-    it('should direct a click to the clicked movie\'s details', () => {
-      cy.get('img[name=movie-poster]')
-        .get('#436270').click()
-        cy.url().should('include', '/436270')
-    })
+  it('should direct a click to the clicked movie\'s details', () => {
+    cy.get('img[name=movie-poster]')
+      .get('#436270').click()
+      .url().should('include', '/436270')
+  })
 
   it('should display an error message when there is an unsuccessful response', () => {
     cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies', {
