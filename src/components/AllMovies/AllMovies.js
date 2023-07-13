@@ -15,7 +15,6 @@ const AllMovies = ({  serverError, movies, changeSearch, searchValue  }) => {
           movieYear={movie.release_date.slice(0,4)}
           key={movie.id}
           id={movie.id}
-          handleClick={handleClick}
         />
       )
     })

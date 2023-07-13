@@ -42,7 +42,7 @@ const App = () => {
   const handleClick = (event) => {
     // chosenMovieId = event.target.id
     // setChosenMovie(findMovie(chosenMovieId))
-    goToHomeView(false);
+    // goToHomeView(false);
   };
 
 
