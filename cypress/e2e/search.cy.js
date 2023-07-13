@@ -8,4 +8,9 @@ describe('rancid tomatillos searchbar user flows', () => {
     .visit('http://localhost:3000');
   });
 
+  it('should be able to search for movies using keywords in searchbar on homepage', () => {
+    cy.get('input[name=searchbar]')
+      .type('adam')
+
+  })
 });
