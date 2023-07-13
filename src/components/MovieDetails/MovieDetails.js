@@ -30,7 +30,7 @@ const MovieDetails = ({ goToHomeView, getData }) => {
 
   const SingleMovieError = () => {
     return (
-      (<h3 className='error-message'>Sorry, movie details could not be loaded</h3>)
+      (<h3 className='error-message' id='error-message'>Sorry, movie details could not be loaded</h3>)
     )
   }
 
@@ -41,13 +41,14 @@ const MovieDetails = ({ goToHomeView, getData }) => {
       width: '100vw',
       opacity: 0.2,
     }
+    
     return (
       <div className='single-movie-view'>
         <div className='single-movie-background' style={backgroundStyle}> 
         </div>
         <div className="details-content">
         
-          <div className='back-icon-container'>
+          <div className='back-icon-container' onClick={() => {goToHomeView(true)}}>
             <Link to='/' >
               <img src={backIcon}/>
             </Link>

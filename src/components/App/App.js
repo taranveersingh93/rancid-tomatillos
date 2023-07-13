@@ -31,6 +31,7 @@ const App = () => {
       })
   }, [])
 
+
   const filterMovies = (keyword, movieList) => {
     return [...movieList].filter(movie => movie.title.toLowerCase().includes(keyword.toLowerCase()))
   }
@@ -43,13 +44,17 @@ const App = () => {
   return (
     <div className="App">
       <Navbar />
+     
       <main>
         <Routes>
-            <Route path='/' element={<AllMovies serverError={serverError} changeSearch={changeSearch} movies={movies} searchValue={searchValue} />}>
-            </Route>
-            <Route path='/:id' element={<MovieDetails getData={getData}/>} />
+            <Route path='/:id' element={<MovieDetails goToHomeView={goToHomeView} getData={getData}/>} />
+            <Route path='/' element={onHomeView && <AllMovies serverError={serverError} changeSearch={changeSearch} movies={movies} searchValue={searchValue}/>} />
         </Routes>
       </main>
+
+
+      
+
     </div>
   );
 }

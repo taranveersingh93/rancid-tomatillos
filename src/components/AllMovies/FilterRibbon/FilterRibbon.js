@@ -9,6 +9,7 @@ const Searchbar = ({changeSearch, searchValue}) => {
     <div className="search-container">
       <input 
         className="searchbar"
+        name='searchbar'
         placeholder="Search for a movie"
         type="text"
         onChange={event => changeSearch(event.target.value)}
@@ -17,6 +18,7 @@ const Searchbar = ({changeSearch, searchValue}) => {
       <div className="cross-container">
         <img
           src={crossIcon}
+          name='cross-icon'
           className="cross-icon"
           onClick={() => changeSearch('')}/>
       </div>
