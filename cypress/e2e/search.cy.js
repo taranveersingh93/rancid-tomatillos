@@ -17,6 +17,15 @@ describe('rancid tomatillos searchbar user flows', () => {
       .get('#436270')
   });
 
+  it('should be able to search for movies using both uppercase and lowercase', () => {
+    cy.get('input[name=searchbar]')
+      .type('kInG')
+      .get('.all-movies-container')
+      .contains('h3', 'The Woman King (2022)')
+      .get('img[name=movie-poster]')
+      .get('#724495')
+  });
+
   it('should clear the searchbar when the x is clicked', () => {
     cy.get('input[name=searchbar]')
       .type('king')
@@ -25,6 +34,8 @@ describe('rancid tomatillos searchbar user flows', () => {
       .should('have.value', '');
     cy.get('.all-movies-container').children()
       .should('have.length', 5)
+      .first()
+      .contains('h3', 'Black Adam (2022)')
   });
 
   it('should modify search when deleting letters/word from search', () => {
