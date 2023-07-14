@@ -40,6 +40,8 @@ const App = () => {
     return [...movieList].filter(movie => movie.title.toLowerCase().includes(keyword.toLowerCase()))
   }
 
+  
+
   const changeSearch = value => {
     setSearchValue(value);
     setMovies(filterMovies(value, allMovies));
