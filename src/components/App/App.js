@@ -9,7 +9,7 @@ import { checkServerError } from '../../helperFunctions';
 import { Route, Routes } from 'react-router-dom'
 
 const App = () => {
-  const [onHomeView, setOnHomeView] = useState(true);
+  // const [onHomeView, setOnHomeView] = useState(true);
   const [onDetailsView, setOnDetailsView] = useState(false);
   const [searchValue, setSearchValue] = useState('');
   const [movies, setMovies] = useState([]);
@@ -56,7 +56,7 @@ const App = () => {
       <main>
         <Routes>
             <Route path='/:id' element={<MovieDetails getData={getData}/>} />
-            <Route path='/' element={onHomeView && <AllMovies serverError={serverError} changeSearch={changeSearch} movies={movies} searchValue={searchValue}/>} />
+            <Route path='/' element={<AllMovies serverError={serverError} changeSearch={changeSearch} movies={movies} searchValue={searchValue}/>} />
         </Routes>
       </main>
 
