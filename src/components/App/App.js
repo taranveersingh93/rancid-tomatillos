@@ -16,6 +16,10 @@ const App = () => {
   const [chosenMovie, setChosenMovie] = useState('')
   const [allMovies, setAllMovies] = useState([])
   const [serverError, setServerError] = useState(false);
+  // add states
+  const [selectedRating, setSelectedRating] = useState('')
+
+
 
   let chosenMovieId
 
@@ -51,9 +55,6 @@ const App = () => {
             <Route path='/' element={onHomeView && <AllMovies serverError={serverError} changeSearch={changeSearch} movies={movies} searchValue={searchValue}/>} />
         </Routes>
       </main>
-
-
-      
 
     </div>
   );
