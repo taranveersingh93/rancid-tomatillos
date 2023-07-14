@@ -8,19 +8,24 @@
   position: absolute;
   top: 0;
   left: 0;
-  /* width: 100vw; */
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
   background-repeat: no-repeat;
-  /* background-color: black; */
 }
 
 .single-movie-background img {
   width: 100%;
   object-fit: cover;
   opacity: 0.25;
+}
+
+.sub-details {
+  display: flex;
+  width: 70%;
+  align-items: center;
+  justify-content: space-evenly;
 }
 
 .details-content {
@@ -46,7 +51,17 @@
   }
 
   .details {
-    width: 75%;
+    width: 55%;
+  }
+}
+
+@media (max-width: 950px) {
+  .sub-details {
+    flex-direction: column;
+  }
+
+  .details {
+    width: 70%;
   }
 }
 
