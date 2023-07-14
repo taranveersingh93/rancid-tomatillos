@@ -1,10 +1,9 @@
 const getData = (data) => {
   return fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/${data}`)
     .then(response => {
-      if (response.status === 500) {
-        return 'serverError'
-      }
-      if (response.status === 200) {
+      if (!response.ok) {
+        throw new Error(`${response.status} error`)
+      } else {
         return response.json()
       }
     })
