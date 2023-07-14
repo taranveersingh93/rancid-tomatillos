@@ -62,6 +62,18 @@ describe('should display the right elements in single movie view for Black Adam'
     cy.get('h3')
       .contains('Sorry, movie details could not be loaded')
   })
+
+  it('should handle 400 error', () => {
+    interceptMovie(400, 436270)
+    cy.get('h3')
+      .contains('Sorry, movie details could not be loaded')
+  })
+
+  it('should handle 300 error', () => {
+    interceptMovie(400, 436270)
+    cy.get('h3')
+      .contains('Sorry, movie details could not be loaded')
+  })
 })
 
 
@@ -112,6 +124,18 @@ describe('should display the right elements in single movie view for The Woman K
 
   it('should handle 500 error', () => {
     interceptMovie(500, 724495)
+    cy.get('h3')
+      .contains('Sorry, movie details could not be loaded')
+  })
+
+  it('should handle 400 error', () => {
+    interceptMovie(400, 724495)
+    cy.get('h3')
+      .contains('Sorry, movie details could not be loaded')
+  })
+
+  it('should handle 300 error', () => {
+    interceptMovie(400, 724495)
     cy.get('h3')
       .contains('Sorry, movie details could not be loaded')
   })

@@ -22,14 +22,19 @@ const App = () => {
   useEffect(() => {
     getData('movies')
       .then(data => {
-        if (checkServerError(data)) {
-          setServerError(true);
-          setWaitingForFetch(false);
-        } else {
+        if (data.movies) {
           setMovies(data.movies);
           setAllMovies(data.movies);
           setWaitingForFetch(false);
+        } else {
+          setServerError(true);
+          setWaitingForFetch(false);
         }
+      })
+      .catch((err) => {
+        console.error(err);
+        setServerError(true);
+        setWaitingForFetch(false);
       })
   }, [])
 
