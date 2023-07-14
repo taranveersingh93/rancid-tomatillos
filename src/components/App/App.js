@@ -9,13 +9,11 @@ import { checkServerError } from '../../helperFunctions';
 import { Route, Routes } from 'react-router-dom'
 
 const App = () => {
-  const [onHomeView, setOnHomeView] = useState(true);
-  const [onDetailsView, setOnDetailsView] = useState(false);
   const [searchValue, setSearchValue] = useState('');
   const [movies, setMovies] = useState([]);
-  const [chosenMovie, setChosenMovie] = useState('')
   const [allMovies, setAllMovies] = useState([])
   const [serverError, setServerError] = useState(false);
+  const [waitingForFetch, setWaitingForFetch] = useState(true);
 
   let chosenMovieId
 
@@ -48,7 +46,7 @@ const App = () => {
       <main>
         <Routes>
             <Route path='/:id' element={<MovieDetails getData={getData}/>} />
-            <Route path='/' element={onHomeView && <AllMovies serverError={serverError} changeSearch={changeSearch} movies={movies} searchValue={searchValue}/>} />
+            <Route path='/' element={<AllMovies waitingForFetch={waitingForFetch} serverError={serverError} changeSearch={changeSearch} movies={movies} searchValue={searchValue}/>} />
         </Routes>
       </main>
 
