@@ -40,7 +40,9 @@ const App = () => {
     return [...movieList].filter(movie => movie.title.toLowerCase().includes(keyword.toLowerCase()))
   }
 
-  
+  const filterByRating = (rating, movieList) => {
+    return [...movieList].filter(movie => movie.average_rating >= rating)
+  }
 
   const changeSearch = value => {
     setSearchValue(value);
