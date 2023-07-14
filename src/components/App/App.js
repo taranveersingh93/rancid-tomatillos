@@ -25,13 +25,11 @@ const App = () => {
           setAllMovies(data.movies);
           setWaitingForFetch(false);
         } else {
-          console.log('then')
           setServerError(true);
           setWaitingForFetch(false);
         }
       })
       .catch((err) => {
-        console.log("catch")
         console.error(err);
         setServerError(true);
         setWaitingForFetch(false);

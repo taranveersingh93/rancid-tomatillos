@@ -18,14 +18,19 @@ const MovieDetails = ({ goToHomeView, getData }) => {
     
     getData(`movies/${chosenID}`)
       .then(data => {
-        if (checkServerError(data)) {
-          setServerError(true)
-          setWaitingForSingleFetch(false)
-        } else {
+        if (data.movie) {
           const fetchedMovie = data.movie
           setDetails(fetchedMovie);
           setWaitingForSingleFetch(false)
+        } else {
+          setServerError(true);
+          setWaitingForSingleFetch(false);
         }
+      })
+      .catch((err) => {
+        console.error(err);
+        setServerError(true);
+        setWaitingForSingleFetch(false);
       })
   }, [])
 
