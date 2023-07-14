@@ -29,8 +29,7 @@ const AllMovies = ({  serverError, movies, changeSearch, searchValue  }) => {
   return (
     <section className='all-movies-view'>
       <FilterRibbon changeSearch={changeSearch} searchValue={searchValue}/>
-      {(serverError) && <ErrorMessage />}
-      {(!movieCards.length) && <ErrorMessage />}
+      {(serverError || !movieCards.length) && <ErrorMessage />}
       <div className='all-movies-container'>
         {movieCards}
       </div>
