@@ -53,23 +53,24 @@ const MovieDetails = ({ goToHomeView, getData }) => {
               <img src={backIcon}/>
             </Link>
           </div>
-          
-          <div className='movie-details-poster-container'>
-            <img src={details.poster_path} className='details-movie-poster' alt={details.title} id={details.id}/>
-          </div>
-          <div className='details'>
-            <h2 className='movie-details-title'>
-              {`${details.title}`}
-            </h2>
-            <div className='release-date'>
-              Released on {`${humanizeDate(details.release_date)}`}
+          <div className='sub-details'>
+            <div className='movie-details-poster-container'>
+              <img src={details.poster_path} className='details-movie-poster' alt={details.title} id={details.id}/>
             </div>
-            <h3 className='rating'>
-              Average Rating: {details.average_rating.toFixed(1)} / 10
-            </h3>
-            <p className='movie-description'> 
-              {details.overview}
-            </p>
+            <div className='details'>
+              <h2 className='movie-details-title'>
+                {`${details.title}`}
+              </h2>
+              <div className='release-date'>
+                Released on {`${humanizeDate(details.release_date)}`}
+              </div>
+              <h3 className='rating'>
+                Average Rating: {details.average_rating.toFixed(1)} / 10
+              </h3>
+              <p className='movie-description'> 
+                {details.overview}
+              </p>
+            </div>
           </div>
         </div>
       </div>

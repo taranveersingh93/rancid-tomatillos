@@ -16,6 +16,7 @@
   font-size: 16px;
   border-radius: 20px;
   width: 20%;
+  min-width: 320px;
   height: 50%;
   background-color: #ffffffcd;
 }
