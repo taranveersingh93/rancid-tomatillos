@@ -1,6 +1,6 @@
 import './MovieDetails.css';
 import backIcon from '../../images/back-icon.png';
-import { humanizeDate, findMovie } from '../../helperFunctions';
+import { humanizeDate } from '../../helperFunctions';
 import { useEffect, useState } from 'react';
 import { checkServerError } from '../../helperFunctions';
 import PropTypes from 'prop-types';
@@ -80,7 +80,7 @@ const MovieDetails = ({ goToHomeView, getData }) => {
 
   return (<>
     {waitingForSingleFetch && <Loader />}
-    {!waitingForSingleFetch && <DetailedView details={details}/>}
+    {!waitingForSingleFetch && !serverError && <DetailedView details={details}/>}
     {!waitingForSingleFetch && serverError && <SingleMovieError />}
   </>)
 }
