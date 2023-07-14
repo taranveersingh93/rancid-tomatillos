@@ -5,12 +5,12 @@ import { useEffect, useState } from 'react';
 import { checkServerError } from '../../helperFunctions';
 import PropTypes from 'prop-types';
 import { useParams, Link } from 'react-router-dom'
-
+import Loader from '../LoadSpinner/LoadSpinner';
 
 const MovieDetails = ({ goToHomeView, getData }) => {
-  const [dataArrived, setDataArrived] = useState(false);
   const [details, setDetails] = useState({});
   const [serverError, setServerError] = useState(false);
+  const [waitingForSingleFetch, setWaitingForSingleFetch] = useState(true);
 
   const chosenID = useParams().id
 
@@ -20,10 +20,11 @@ const MovieDetails = ({ goToHomeView, getData }) => {
       .then(data => {
         if (checkServerError(data)) {
           setServerError(true)
+          setWaitingForSingleFetch(false)
         } else {
           const fetchedMovie = data.movie
           setDetails(fetchedMovie);
-          setDataArrived(true);
+          setWaitingForSingleFetch(false)
         }
       })
   }, [])
@@ -78,8 +79,9 @@ const MovieDetails = ({ goToHomeView, getData }) => {
   }
 
   return (<>
-    {dataArrived && <DetailedView details={details}/>}
-    {serverError && <SingleMovieError />}
+    {waitingForSingleFetch && <Loader />}
+    {!waitingForSingleFetch && <DetailedView details={details}/>}
+    {!waitingForSingleFetch && serverError && <SingleMovieError />}
   </>)
 }
 

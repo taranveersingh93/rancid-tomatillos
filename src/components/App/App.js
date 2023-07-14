@@ -22,9 +22,11 @@ const App = () => {
       .then(data => {
         if (checkServerError(data)) {
           setServerError(true);
+          setWaitingForFetch(false);
         } else {
-          setMovies(data.movies)
-          setAllMovies(data.movies)
+          setMovies(data.movies);
+          setAllMovies(data.movies);
+          setWaitingForFetch(false);
         }
       })
   }, [])
@@ -49,10 +51,6 @@ const App = () => {
             <Route path='/' element={<AllMovies waitingForFetch={waitingForFetch} serverError={serverError} changeSearch={changeSearch} movies={movies} searchValue={searchValue}/>} />
         </Routes>
       </main>
-
-
-      
-
     </div>
   );
 }
