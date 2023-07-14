@@ -23,7 +23,6 @@ const AllMovies = ({  serverError, movies, changeSearch, searchValue  }) => {
   const ErrorMessage = () => {
     return (<h3 className='error-message' id='error-message'>Sorry, No movies to display</h3>);
   }
-  console.log(movieCards)
   return (
     <section className='all-movies-view'>
       <FilterRibbon changeSearch={changeSearch} searchValue={searchValue}/>
