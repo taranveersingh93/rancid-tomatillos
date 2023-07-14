@@ -35,10 +35,25 @@ describe('rancid tomatillos homepage user flows', () => {
       .url().should('eq', 'http://localhost:3000/436270')
   })
 
-  it('should display an error message when there is an unsuccessful response', () => {
+  it('should display an error message for 400 error', () => {
+    cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies', {
+      statusCode: 400,
+    })
+    cy.contains('h3', 'Sorry, No movies to display')
+  });
+
+  it('should display an error message for 500 error', () => {
     cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies', {
       statusCode: 500,
     })
     cy.contains('h3', 'Sorry, No movies to display')
   });
+
+  it('should display an error message for 300 response', () => {
+    cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies', {
+      statusCode: 300,
+    })
+    cy.contains('h3', 'Sorry, No movies to display')
+  });
+
 });

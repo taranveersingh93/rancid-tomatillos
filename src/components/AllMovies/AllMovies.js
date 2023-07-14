@@ -24,6 +24,7 @@ const AllMovies = ({  waitingForFetch, serverError, movies, changeSearch, search
   const ErrorMessage = () => {
     return (<h3 className='error-message' id='error-message'>Sorry, No movies to display</h3>);
   }
+  
   return (
     <section className='all-movies-view'>
       {waitingForFetch && <Loader />}
