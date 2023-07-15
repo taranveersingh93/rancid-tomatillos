@@ -1,70 +1,60 @@
-# Getting Started with Create React App
+# Rancid Tomatillos
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![DEPLOYED LINK](https://taranveersingh93.github.io/rancid-tomatillos/)
 
-## Available Scripts
 
-In the project directory, you can run:
+## Visual Demos
 
-### `npm start`
+![Desktop Demo](https://user-images.githubusercontent.com/122247155/253751730-15f24c74-e86c-4322-96ac-041af672b4c4.gif)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+![Mobile screen demo](https://user-images.githubusercontent.com/122247155/253751768-da60da6b-c137-492c-ae45-a400973f5eaa.gif)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+![Responsiveness demo](https://user-images.githubusercontent.com/122247155/253751888-c1afe2d3-c203-4ef0-af06-6f5f8ff19c6c.gif)
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Tech Stack
 
-### `npm run build`
+- React 
+- CSS
+- React Router 
+- Cypress Testing
+- PropTypes Library
+- Fetch API
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Description
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+This is a movie listing website that uses the fetch API to display information about a variety of movies. This web app also allows searching movies by name and clicking a movie to view more details.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Technical Pointers
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- The data for this website is fetched from an API endpoint. 
+- We utilized React Router to make this an app with a multi-page UX.
+- The display uses Media Queries to implement responsiveness across, small, medium, and large screens, including cell phones and tablets. 
+- End to EndTesting was implemented with Cypress.
+- Uses controlled components that follow data down actions up approach.
+- Typechecking done using Proptypes.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Installation Instructions
 
-## Learn More
+- Clone this repository to your local machine using the command: `git clone git@github.com:taranveersingh93/rancid-tomatillos.git`
+- Run the command: `cd rancid-tomatillos`
+- Run the command: `npm install`
+- Run the command: `npm start`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Contributors:
+- [Paulina Rubio](https://github.com/paulina-isabel)
+- [Taranveer Singh](https://github.com/taranveersingh93)
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Learning Goals
+- Manage state efficiently by following data down, actions up approach with React states/props.
+- Create a user interface that is easy to use and clearly displays information.
+- Implement a robust testing suite using Cypress.
+- Collaborate productively and professionally as a team. 
+- Implement the use of a project board, task delegation tickets, and thorough code reviews.
+- Write modular code using React Components and ensure type checking of props using PropTypes.
+- Create a multi-page UX using Router.
