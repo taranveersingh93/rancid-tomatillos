@@ -1,13 +1,14 @@
 import './RatingsFilter.css'
 import { useState } from 'react';
 
-const RatingsFilter = () => {
+const RatingsFilter = ({ title, items }) => {
 
   const [open, setOpen] = useState(false);
   const [selection, setSelection] = useState([]);
   // this holds our items, IF WE SELECT SOMETHING   with that object, properties, and values
   const toggle = () => setOpen(!open)
-  function handleClick(item) {
+  
+  function handleOnClick(item) {
 
   }
 
@@ -32,6 +33,19 @@ const RatingsFilter = () => {
             </p>
           </div>
       </div>
+
+      {open && (
+        <ul className='dropdown-list'>
+          {items.map(item => (
+            <li className='dropdown-list-item' key={item.id}>
+              <button type='button'onClick={() => handleOnClick(item)}>
+                <span>{item.value}</span>
+              </button>
+            </li>
+          ))}
+        </ul>
+      )}
+
     </div>
   )
 }

@@ -26,12 +26,14 @@ const AllMovies = ({  waitingForFetch, serverError, movies, changeSearch, search
     return (<h3 className='error-message' id='error-message'>Sorry, No movies to display</h3>);
   }
 
+  const items = ['1.0 +', '2.0 +', '3.0 +', '4.0 +', '5.0 +', '6.0 +', '7.0 +', '8.0 +', '9.0 +', '10.0 +']
+
   return (
     <section className='all-movies-view'>
 
       {waitingForFetch && <Loader />}
 
-      {!waitingForFetch && <> <FilterRibbon changeSearch={changeSearch} searchValue={searchValue} /> <RatingsFilter /> </>}
+      {!waitingForFetch && <> <FilterRibbon changeSearch={changeSearch} searchValue={searchValue} /> <RatingsFilter title='Filter by Rating' items={items} /> </>}
 
       {!waitingForFetch && (serverError || !movieCards.length) && <ErrorMessage />}
 
