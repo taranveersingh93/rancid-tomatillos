@@ -5,7 +5,7 @@ const RatingsFilter = () => {
 
   const [open, setOpen] = useState(false);
   const [selection, setSelection] = useState([]);
-  // this holds our items, IF WE SELECT SOMETHIN with that object, properties, and values
+  // this holds our items, IF WE SELECT SOMETHING   with that object, properties, and values
   const toggle = () => setOpen(!open)
   function handleClick(item) {
 
@@ -19,9 +19,16 @@ const RatingsFilter = () => {
         role='button' 
         onKeyPress={() => toggle(!open)} 
         onClick={() => toggle(!open)}>
+
           <div className='dropdown-header__title'>
             <p className='dropdown-header__title--bold'>
               Title :)!
+            </p>
+          </div>
+
+          <div className='dropdown-header__action'>
+            <p>
+              {open ? 'Close' : 'Open'}
             </p>
           </div>
       </div>
