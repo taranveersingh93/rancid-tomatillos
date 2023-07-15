@@ -41,16 +41,16 @@ const App = () => {
   const filterMovies = (keyword, movieList) => {
     return [...movieList].filter(movie => movie.title.toLowerCase().includes(keyword.toLowerCase()))
   }
-
-  const filterByRating = (rating, movieList) => {
-    return [...movieList].filter(movie => movie.average_rating >= rating)
-  }
-
+  
   const changeSearch = value => {
     setSearchValue(value);
     setMovies(filterMovies(value, allMovies));
   }
   
+  const filterByRating = (rating, movieList) => {
+    return [...movieList].filter(movie => movie.average_rating >= rating)
+  }
+
   return (
     <div className="App">
       <Navbar />
