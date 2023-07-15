@@ -9,7 +9,7 @@ const RatingsFilter = ({ title, items }) => {
   const toggle = () => setOpen(!open)
   
   function handleOnClick(item) {
-
+    console.log(`you clicked ${item.value}`)
   }
 
   return (
@@ -23,13 +23,13 @@ const RatingsFilter = ({ title, items }) => {
 
           <div className='dropdown-header__title'>
             <p className='dropdown-header__title--bold'>
-              Title :)!
+              {title}
             </p>
           </div>
 
           <div className='dropdown-header__action'>
             <p>
-              {open ? 'Close' : 'Open'}
+              Filter by Rating
             </p>
           </div>
       </div>

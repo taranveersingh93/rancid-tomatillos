@@ -2,3 +2,7 @@
   color: azure;
   background-color: #a1c2f7;
 }
+
+.dropdown-header {
+  background-image: none;
+}
