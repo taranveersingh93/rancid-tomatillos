@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/rancid-tomatillos/static/css/main.5896d424.css",
-    "main.js": "/rancid-tomatillos/static/js/main.62c02833.js",
-    "static/js/787.55352625.chunk.js": "/rancid-tomatillos/static/js/787.55352625.chunk.js",
-    "static/media/monoton-latin-400-normal.woff": "/rancid-tomatillos/static/media/monoton-latin-400-normal.cd6ebbb8db7fb5f826a3.woff",
-    "static/media/monoton-latin-400-normal.woff2": "/rancid-tomatillos/static/media/monoton-latin-400-normal.97a31dd13064ac9b7d3e.woff2",
-    "index.html": "/rancid-tomatillos/index.html",
-    "main.5896d424.css.map": "/rancid-tomatillos/static/css/main.5896d424.css.map",
-    "main.62c02833.js.map": "/rancid-tomatillos/static/js/main.62c02833.js.map",
-    "787.55352625.chunk.js.map": "/rancid-tomatillos/static/js/787.55352625.chunk.js.map"
+    "main.css": "/whats-cookin/rancid-tomatillos/static/css/main.0b354709.css",
+    "main.js": "/whats-cookin/rancid-tomatillos/static/js/main.75948b39.js",
+    "static/js/787.55352625.chunk.js": "/whats-cookin/rancid-tomatillos/static/js/787.55352625.chunk.js",
+    "static/media/monoton-latin-400-normal.woff": "/whats-cookin/rancid-tomatillos/static/media/monoton-latin-400-normal.cd6ebbb8db7fb5f826a3.woff",
+    "static/media/monoton-latin-400-normal.woff2": "/whats-cookin/rancid-tomatillos/static/media/monoton-latin-400-normal.97a31dd13064ac9b7d3e.woff2",
+    "index.html": "/whats-cookin/rancid-tomatillos/index.html",
+    "main.0b354709.css.map": "/whats-cookin/rancid-tomatillos/static/css/main.0b354709.css.map",
+    "main.75948b39.js.map": "/whats-cookin/rancid-tomatillos/static/js/main.75948b39.js.map",
+    "787.55352625.chunk.js.map": "/whats-cookin/rancid-tomatillos/static/js/787.55352625.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.5896d424.css",
-    "static/js/main.62c02833.js"
+    "static/css/main.0b354709.css",
+    "static/js/main.75948b39.js"
   ]
 }
