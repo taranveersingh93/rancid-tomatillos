@@ -1,6 +1,6 @@
 # Rancid Tomatillos
-
-![DEPLOYED LINK](https://taranveersingh93.github.io/rancid-tomatillos/)
+## Deployed Link
+[Open the app here](https://taranveersingh93.github.io/rancid-tomatillos)
 
 
 ## Visual Demos
